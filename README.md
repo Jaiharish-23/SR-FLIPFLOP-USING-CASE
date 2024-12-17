@@ -53,43 +53,35 @@ Developed by: Jai harish.R
 RegisterNumber: 24006817
 */
 ```
-module SR_FLIP_FLOP(s, r, clk, rst, q, qbar); 
-    input s; 
-    input r; 
-    input clk; 
-    input rst; 
-    output q; 
-    output qbar; 
-reg q,qbar; 
-always @ (posedge(clk) or posedge(rst)) begin 
-if(rst==1'b1) begin 
-q= 1'b0;qbar= 1'b1;
- end 
-  else if(s==1'b0 && r==1'b0) 
-   begin 
-  q=q; qbar=qbar; 
-  end 
-   else if(s==1'b0 && r==1'b1) 
-    begin 
-  q= 1'b0; qbar= 1'b1; 
-  end 
-    else if(s==1'b1 && r==1'b0) 
-    begin 
-  q= 1'b1; qbar= 1'b0; 
-  end 
-  else  
-  begin 
-  q=1'bx;qbar=1'bx; 
-  end 
-  end 
+module SR_FLIP_FLOP(q, q_bar, s,r, clk, reset);
+  input s,r,clk, reset;
+  output reg q;
+  output q_bar;
+ 
+  always@(posedge clk) begin 
+    if(!reset)       
+			q <= 0;
+    else 
+  begin
+      case({s,r})       
+	     2'b00: q <= q;    
+        2'b01:q<=1'b0;   
+        2'b10:q<=1'b1;   
+        2'b11:q<=1'bx;  
+      endcase
+    end
+  end
+  assign q_bar = ~q;
 endmodule
 ```
 **RTL LOGIC FOR FLIPFLOPS**
 
-![{7243C3D5-6F34-469F-92F1-46A8A9602355}](https://github.com/user-attachments/assets/f3c7ec55-189f-4908-a94d-fc03bcdcac45)
+![{29C4F6F3-9082-474A-8114-A4549F67CF1C}](https://github.com/user-attachments/assets/fd472374-d3db-4e52-8061-fea507b1483e)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![Screenshot (250)](https://github.com/user-attachments/assets/668106a7-08a9-4a3a-8928-0596bcf0eb26)
+
+![image](https://github.com/user-attachments/assets/e20c71c8-4e47-450f-98d2-9bf57bbe048e)
+
 
 **RESULTS**
 The observation of the simulation results and confirm the successful execution of the program.
