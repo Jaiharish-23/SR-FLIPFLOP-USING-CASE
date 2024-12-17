@@ -85,7 +85,9 @@ q= 1'b0;qbar= 1'b1;
 endmodule
 ```
 **RTL LOGIC FOR FLIPFLOPS**
-![{AF5FD7ED-6CC0-4EEE-9929-007B23E9D84F}](https://github.com/user-attachments/assets/7a3fa0d1-5349-4adb-b032-b7eeac4fc2c9)
+
+![{7243C3D5-6F34-469F-92F1-46A8A9602355}](https://github.com/user-attachments/assets/f3c7ec55-189f-4908-a94d-fc03bcdcac45)
+
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
