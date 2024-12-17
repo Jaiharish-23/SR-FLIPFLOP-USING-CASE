@@ -88,8 +88,6 @@ endmodule
 
 ![{7243C3D5-6F34-469F-92F1-46A8A9602355}](https://github.com/user-attachments/assets/f3c7ec55-189f-4908-a94d-fc03bcdcac45)
 
-
-
 **TIMING DIGRAMS FOR FLIP FLOPS**
 ![Screenshot (250)](https://github.com/user-attachments/assets/668106a7-08a9-4a3a-8928-0596bcf0eb26)
 
